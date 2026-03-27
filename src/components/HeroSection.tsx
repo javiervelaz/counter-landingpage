@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export function HeroSection() {
+export function   HeroSection() {
   return (
     <section className="section-spacing">
       <div className="section-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
