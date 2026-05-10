@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
-export function HeroSection() {
+export function   HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white py-20 sm:py-28">
       <div className="section-shell relative">
