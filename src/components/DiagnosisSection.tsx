@@ -18,11 +18,8 @@ export function DiagnosisSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {diagnosisSteps.map((step, index) => (
             <div key={step} className="relative">
-              {index < diagnosisSteps.length - 1 && (
-                <div className="absolute left-full top-8 hidden h-px w-full -translate-x-1/2 border-t-2 border-dashed border-slate-200 sm:block" />
-              )}
               <div className="card text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 text-xl font-extrabold text-white shadow-blue">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 text-xl font-extrabold text-white shadow-brand">
                   {index + 1}
                 </div>
                 <p className="mt-4 text-sm font-semibold leading-relaxed text-slate-700">{step}</p>

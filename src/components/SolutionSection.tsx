@@ -1,10 +1,10 @@
 import { solutionItems } from '@/data/content';
 
 const iconBg = [
-  'bg-brand-100 text-brand-700',
-  'bg-teal-100 text-teal-700',
-  'bg-emerald-100 text-emerald-700',
-  'bg-indigo-100 text-indigo-700'
+  'bg-brand-100 text-brand-600',
+  'bg-accent-500/15 text-accent-500',
+  'bg-brand-50 text-brand-400',
+  'bg-accent-300/30 text-amber-700'
 ];
 
 export function SolutionSection() {
@@ -25,7 +25,7 @@ export function SolutionSection() {
           {solutionItems.map(({ title, description, icon: Icon }, i) => (
             <article
               key={title}
-              className="card border-b-4 border-b-brand-500 transition hover:-translate-y-1 hover:shadow-soft"
+              className="card border-b-4 border-b-brand-600 transition hover:-translate-y-1 hover:shadow-brand"
             >
               <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${iconBg[i]}`}>
                 <Icon className="h-6 w-6" aria-hidden="true" />

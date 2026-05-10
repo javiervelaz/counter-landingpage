@@ -54,13 +54,13 @@ export function PricingSection() {
               key={plan.name}
               className={`card relative flex flex-col ${
                 plan.highlighted
-                  ? 'border-brand-500 shadow-blue ring-2 ring-brand-500'
+                  ? 'border-brand-600 shadow-brand ring-2 ring-brand-600'
                   : ''
               }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-brand-600 px-4 py-1 text-xs font-bold text-white shadow-blue">
+                  <span className="rounded-full bg-accent-500 px-4 py-1 text-xs font-bold text-white shadow-accent">
                     Más popular
                   </span>
                 </div>
@@ -91,8 +91,8 @@ export function PricingSection() {
                 href={plan.href}
                 className={`mt-8 block w-full rounded-xl py-3 text-center text-sm font-bold transition ${
                   plan.highlighted
-                    ? 'bg-brand-600 text-white shadow-blue hover:bg-brand-700'
-                    : 'border border-slate-200 text-slate-700 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700'
+                    ? 'bg-brand-600 text-white shadow-brand hover:bg-brand-700'
+                    : 'border border-brand-100 text-brand-600 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700'
                 }`}
               >
                 {plan.cta}

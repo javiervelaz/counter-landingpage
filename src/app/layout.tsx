@@ -1,12 +1,24 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
+const montserrat = localFont({
+  src: [
+    { path: '../assets/Fuentes/Montserrat/Montserrat-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../assets/Fuentes/Montserrat/Montserrat-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../assets/Fuentes/Montserrat/Montserrat-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: '../assets/Fuentes/Montserrat/Montserrat-Bold.ttf', weight: '700', style: 'normal' },
+    { path: '../assets/Fuentes/Montserrat/Montserrat-ExtraBold.ttf', weight: '800', style: 'normal' },
+    { path: '../assets/Fuentes/Montserrat/Montserrat-Black.ttf', weight: '900', style: 'normal' }
+  ],
   variable: '--font-montserrat',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900']
+  display: 'swap'
+});
+
+const outfit = localFont({
+  src: '../assets/Fuentes/Outfit/Outfit-VariableFont_wght.ttf',
+  variable: '--font-outfit',
+  display: 'swap'
 });
 
 export const metadata: Metadata = {
@@ -21,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={montserrat.variable}>
+    <html lang="es" className={`${montserrat.variable} ${outfit.variable}`}>
       <body>{children}</body>
     </html>
   );
