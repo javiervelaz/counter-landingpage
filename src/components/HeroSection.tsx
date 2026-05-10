@@ -3,25 +3,22 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 export function   HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white py-20 sm:py-28">
-      {/* Decorative circles — inspired by Clienty */}
-      <div className="pointer-events-none absolute -top-20 -right-20 h-80 w-80 rounded-full bg-yellow-200/50" />
-      <div className="pointer-events-none absolute top-1/2 -left-16 h-56 w-56 -translate-y-1/2 rounded-full bg-brand-100/60" />
-      <div className="pointer-events-none absolute bottom-0 right-1/3 h-40 w-40 rounded-full bg-orange-200/40" />
-
       <div className="section-shell relative">
         {/* Badge */}
         <div className="mb-6 flex justify-center">
           <span className="section-label">Para pequeños negocios</span>
         </div>
 
-        {/* Headline */}
-        <h1 className="mx-auto max-w-3xl text-center text-5xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-6xl">
-          Tus ventas más simples,{' '}
-          <span className="text-brand-600">desde hoy.</span>
+        {/* Headline — Outfit para mayor impacto visual */}
+        <h1 className="font-display mx-auto max-w-3xl text-center text-5xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-6xl">
+          Somos el asistente digital 
+que entiende tu ritmo,{' '}
+          <span className="text-brand-600">habla tu lenguaje y te 
+acompaña de igual a igual.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl text-center text-lg text-slate-500">
-          Organizá pedidos, clientes y stock en un solo lugar. Sin Excel, sin cuadernos, sin caos.
+          Organizá pedidos, clientes y reportes en un solo lugar. Sin Excel, sin cuadernos, sin caos.
         </p>
 
         {/* CTAs */}
@@ -36,7 +33,7 @@ export function   HeroSection() {
         </div>
 
         {/* App mockup */}
-        <div className="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-soft">
+        <div className="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-brand-100 bg-slate-50 shadow-soft">
           {/* Browser bar */}
           <div className="flex items-center gap-2 border-b border-slate-200 bg-white px-4 py-3">
             <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -56,7 +53,7 @@ export function   HeroSection() {
                 {['Pedidos', 'Clientes', 'Stock', 'Historial'].map(item => (
                   <div
                     key={item}
-                    className="rounded-lg px-3 py-2 text-xs font-semibold text-slate-600 first:bg-brand-50 first:text-brand-700"
+                    className="rounded-lg px-3 py-2 text-xs font-semibold text-slate-600 first:bg-brand-50 first:text-brand-600"
                   >
                     {item}
                   </div>
@@ -69,9 +66,9 @@ export function   HeroSection() {
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { label: 'Pedidos hoy', value: '24', color: 'bg-brand-50 text-brand-700' },
-                  { label: 'Clientes activos', value: '138', color: 'bg-emerald-50 text-emerald-700' },
-                  { label: 'Stock OK', value: '98%', color: 'bg-yellow-50 text-yellow-700' }
+                  { label: 'Pedidos hoy', value: '24', color: 'bg-brand-50 text-brand-600' },
+                  { label: 'Clientes activos', value: '138', color: 'bg-accent-300/20 text-amber-700' },
+                  { label: 'Stock OK', value: '98%', color: 'bg-emerald-50 text-emerald-700' }
                 ].map(stat => (
                   <div key={stat.label} className={`rounded-xl p-3 ${stat.color}`}>
                     <p className="text-lg font-extrabold">{stat.value}</p>
@@ -91,7 +88,7 @@ export function   HeroSection() {
                         <div className="h-2 w-32 rounded-full bg-slate-200" />
                         <div className="h-2 w-20 rounded-full bg-slate-100" />
                       </div>
-                      <div className="h-6 w-16 rounded-full bg-emerald-100" />
+                      <div className="h-6 w-16 rounded-full bg-accent-500/20" />
                     </div>
                   ))}
                 </div>
@@ -104,7 +101,7 @@ export function   HeroSection() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
           {['Sin tarjeta de crédito', 'Configuración en 5 minutos', 'Soporte en español'].map(item => (
             <span key={item} className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-brand-500" aria-hidden="true" />
+              <CheckCircle className="h-4 w-4 text-accent-500" aria-hidden="true" />
               {item}
             </span>
           ))}

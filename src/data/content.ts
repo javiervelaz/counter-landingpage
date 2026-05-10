@@ -1,4 +1,4 @@
-import { Boxes, ClipboardList, MessageCircleMore, NotebookPen, PackageSearch, Users, Warehouse, History, Clock3, FileX2, Shuffle } from 'lucide-react';
+import { Boxes, ClipboardList, MessageCircleMore, NotebookPen, PackageSearch, Users, Warehouse, History, Clock3, FileX2, Shuffle, Table } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 export type IconCard = {
@@ -65,9 +65,9 @@ export const solutionItems: IconCard[] = [
     icon: Users
   },
   {
-    title: 'Stock',
+    title: 'Reportes',
     description: 'Controlá entradas y salidas con datos actualizados.',
-    icon: Warehouse
+    icon: Table
   },
   {
     title: 'Historial',

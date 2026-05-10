@@ -34,11 +34,11 @@ export function TestimonialsSection() {
           {testimonials.map(({ quote, name, role }) => (
             <figure key={name} className="card flex flex-col justify-between">
               <blockquote>
-                <div className="mb-4 text-3xl font-extrabold leading-none text-brand-200">&ldquo;</div>
+                <div className="mb-4 text-3xl font-extrabold leading-none text-accent-500">&ldquo;</div>
                 <p className="text-sm leading-relaxed text-slate-600">{quote}</p>
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-extrabold text-brand-700">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-extrabold text-white">
                   {name.charAt(0)}
                 </div>
                 <div>

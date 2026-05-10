@@ -1,12 +1,22 @@
+'use client';
+
+import Image from 'next/image';
+import logoVioleta from '@/assets/Logos/COUNTER CRM/COUNTER CRM Logo horizontal violeta.png';
+
 export function Footer() {
   return (
-    <footer className="border-t border-slate-100 bg-white py-12">
+    <footer className="border-t border-brand-100 bg-white py-12">
       <div className="section-shell">
         <div className="grid gap-8 sm:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="/" className="text-xl font-extrabold tracking-tight text-brand-600">
-              Counter
+            <a href="/" className="flex items-center">
+              <Image
+                src={logoVioleta}
+                alt="Counter CRM"
+                height={32}
+                className="w-auto"
+              />
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
               Organizá pedidos, clientes y stock en un solo lugar. Para pequeños negocios que quieren crecer.
@@ -40,12 +50,14 @@ export function Footer() {
                   href="mailto:hola@counter.com"
                   className="text-slate-500 transition hover:text-brand-600"
                 >
-                  hola@counter.com
+                  info@countercrm.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/5491100000000"
+                  href="https://web.whatsapp.com/send?phone=5491100000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-500 transition hover:text-brand-600"
                 >
                   WhatsApp
@@ -55,11 +67,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-slate-100 pt-8 text-xs text-slate-400 sm:flex-row">
-          <p>© {new Date().getFullYear()} Counter. Todos los derechos reservados.</p>
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-brand-100 pt-8 text-xs text-slate-400 sm:flex-row">
+          <p>© {new Date().getFullYear()} Counter CRM. Todos los derechos reservados.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-brand-600 transition">Privacidad</a>
-            <a href="#" className="hover:text-brand-600 transition">Términos</a>
+            <a href="#" className="transition hover:text-brand-600">Privacidad</a>
+            <a href="#" className="transition hover:text-brand-600">Términos</a>
           </div>
         </div>
       </div>
