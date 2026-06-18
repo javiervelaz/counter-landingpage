@@ -22,6 +22,9 @@ export function Navbar() {
           <a href="#como-funciona" className="transition hover:text-white">
             Cómo funciona
           </a>
+          <a href="#nosotros" className="transition hover:text-white">
+            Nosotros
+          </a>
           <a href="#precios" className="transition hover:text-white">
             Precios
           </a>

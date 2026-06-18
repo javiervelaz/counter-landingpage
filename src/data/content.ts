@@ -77,7 +77,7 @@ export const solutionItems: IconCard[] = [
 ];
 
 export const diagnosisSteps = [
-  'Entendemos cómo funciona hoy tu negocio.',
-  'Identificamos dónde aparece el caos operativo.',
-  'Te mostramos cómo organizar pedidos, clientes y stock.'
+  'Creá tu cuenta gratis en menos de 2 minutos. Sin tarjeta, sin formularios largos.',
+  'Cargá tus productos e insumos. Si ya los tenés en Excel, te ayudamos a importarlos.',
+  'Empezá a operar: registrá pedidos, cerrá la caja y mirá tu negocio en tiempo real.'
 ];
