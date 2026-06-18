@@ -18,6 +18,7 @@ const plans = [
   {
     name: 'Pro',
     price: '$9.990',
+    currency: 'ARS',
     period: '/mes',
     description: 'Para negocios que quieren crecer sin límites.',
     features: [
@@ -71,6 +72,7 @@ export function PricingSection() {
                 <div className="mt-2 flex items-end gap-1">
                   <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
                   {plan.period && <span className="mb-1 text-sm text-slate-400">{plan.period}</span>}
+                  {'currency' in plan && <span className="mb-1 ml-1 text-xs font-bold text-slate-400">{(plan as any).currency}</span>}
                 </div>
                 <p className="mt-2 text-sm text-slate-500">{plan.description}</p>
 
@@ -100,6 +102,9 @@ export function PricingSection() {
             </div>
           ))}
         </div>
+        <p className="mt-8 text-center text-xs text-slate-400">
+          Precios en pesos argentinos (ARS). IVA no incluido.
+        </p>
       </div>
     </section>
   );
