@@ -81,3 +81,20 @@ export const diagnosisSteps = [
   'Cargá tus productos e insumos. Si ya los tenés en Excel, te ayudamos a importarlos.',
   'Empezá a operar: registrá pedidos, cerrá la caja y mirá tu negocio en tiempo real.'
 ];
+
+// src/data/content.ts — agregar
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://api.countercrm.com';
+
+export const signupUrl = (plan: 'FREE' | 'BASIC' | 'PREMIUM' | 'CUSTOM' = 'FREE', campaign?: string) => {
+  const p = new URLSearchParams({ plan, utm_source: 'landing' });
+  if (campaign) p.set('utm_campaign', campaign);
+  return `${APP_URL}/saas?${p}`;
+};
+
+export const CONTACTO = {
+  email: 'info@countercrm.com',
+  whatsapp: '5493513344326',   // reemplazar por el número comercial real
+} as const;
+
+export const whatsappUrl = (msg = 'Hola, quiero saber más sobre Counter') =>
+  `https://wa.me/${CONTACTO.whatsapp}?text=${encodeURIComponent(msg)}`;

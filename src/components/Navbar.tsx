@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import logoClaro from '@/assets/Logos/COUNTER CRM/COUNTER CRM Logo horizontal claro.png';
+import { signupUrl } from '@/data/content';
 
 export function Navbar() {
   return (
@@ -30,12 +31,7 @@ export function Navbar() {
           </a>
         </nav>
 
-        <a
-          href="#diagnostico"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-accent-500 px-4 py-2 text-sm font-bold text-white shadow-accent transition hover:bg-accent-400 md:px-8 md:py-3 md:text-base"
-        >
-          Empezar gratis
-        </a>
+       <a href={signupUrl('FREE', 'navbar')} className="...">Empezar gratis</a>
       </div>
     </header>
   );

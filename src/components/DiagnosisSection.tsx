@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { diagnosisSteps } from '@/data/content';
+import { diagnosisSteps, signupUrl } from '@/data/content';
 
 export function DiagnosisSection() {
   return (
@@ -29,10 +29,7 @@ export function DiagnosisSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a id="diagnostico" href="#final-cta" className="cta-button px-8 py-3.5 text-base">
-            Solicitar diagnóstico gratuito
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-          </a>
+          <a href={signupUrl('FREE', 'diagnostico')} className="cta-button px-8 py-3.5 text-base"></a>
         </div>
       </div>
     </section>

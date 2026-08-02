@@ -1,3 +1,4 @@
+import { signupUrl, whatsappUrl } from '@/data/content';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 
 export function CTASection() {
@@ -12,14 +13,14 @@ export function CTASection() {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="#diagnostico"
+            href={signupUrl('FREE', 'cta-final')} 
             className="inline-flex items-center justify-center rounded-xl bg-accent-500 px-8 py-3.5 text-base font-bold text-white shadow-accent transition hover:bg-accent-400"
           >
             Empezar gratis
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </a>
           <a
-             href="https://web.whatsapp.com/send?phone=5491100000000"
+             href={whatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl border-2 border-white/40 px-8 py-3.5 text-base font-bold text-white transition hover:border-white hover:bg-white/10"

@@ -1,41 +1,51 @@
+import { signupUrl, whatsappUrl } from '@/data/content';
+import { getPlans, type ApiPlan } from '@/data/plans';
 import { Check } from 'lucide-react';
 
-const plans = [
-  {
-    name: 'Starter',
-    price: 'Gratis',
-    description: 'Para arrancar y ordenar tu negocio desde cero.',
-    features: [
-      'Hasta 50 pedidos por mes',
-      'Gestión de clientes básica',
-      'Control de stock simple',
-      'Soporte por email'
-    ],
-    cta: 'Empezar gratis',
-    href: '#diagnostico',
-    highlighted: false
-  },
-  {
-    name: 'Pro',
-    price: '$9.990',
-    currency: 'ARS',
-    period: '/mes',
-    description: 'Para negocios que quieren crecer sin límites.',
-    features: [
-      'Pedidos ilimitados',
-      'Clientes y historial completo',
-      'Stock en tiempo real',
-      'Reportes y métricas',
-      'Soporte prioritario en español',
-      'Acceso anticipado a nuevas funciones'
-    ],
-    cta: 'Probar 14 días gratis',
-    href: '#diagnostico',
-    highlighted: true
-  }
-];
+const CTA_LABEL = {
+  FREE: 'Empezar gratis',
+  BASIC: 'Elegir Básico',
+  PREMIUM: 'Elegir Premium',
+  CUSTOM: 'Elegir Custom',
+} as const;
 
-export function PricingSection() {
+const FEATURES: Record<keyof typeof CTA_LABEL, string[]> = {
+  FREE: [
+    'Hasta 50 pedidos por mes',
+    'Gestión de clientes básica',
+    'Control de stock simple',
+  ],
+  BASIC: [
+    'Pedidos ilimitados',
+    'Gestión de clientes completa',
+    'Control de stock en tiempo real',
+  ],
+  PREMIUM: [
+    'Todo lo de Básico',
+    'Reportes avanzados',
+    'Bot de WhatsApp',
+  ],
+  CUSTOM: [
+    'Todo lo de Premium',
+    'Implementación a medida',
+    'Soporte dedicado',
+  ],
+};
+
+const HIGHLIGHTED_CODE: keyof typeof CTA_LABEL = 'PREMIUM';
+
+function formatPrice(precioMensual: string) {
+  const value = Number(precioMensual);
+  return value === 0 ? 'Gratis' : `$${value.toLocaleString('es-AR')}`;
+}
+
+function planHref(plan: ApiPlan) {
+  return signupUrl(plan.code, 'pricing');
+}
+
+export async function PricingSection() {
+  const plans = await getPlans();
+
   return (
     <section id="precios" className="section-spacing bg-slate-50">
       <div className="section-shell">
@@ -50,58 +60,76 @@ export function PricingSection() {
         </p>
 
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
-          {plans.map(plan => (
-            <div
-              key={plan.name}
-              className={`card relative flex flex-col ${
-                plan.highlighted
-                  ? 'border-brand-600 shadow-brand ring-2 ring-brand-600'
-                  : ''
-              }`}
-            >
-              {plan.highlighted && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-accent-500 px-4 py-1 text-xs font-bold text-white shadow-accent">
-                    Más popular
-                  </span>
-                </div>
-              )}
+          {plans.map(plan => {
+            const highlighted = plan.code === HIGHLIGHTED_CODE;
+            const isFree = Number(plan.precio_mensual) === 0;
 
-              <div className="flex-1">
-                <p className="text-sm font-bold uppercase tracking-widest text-slate-400">{plan.name}</p>
-                <div className="mt-2 flex items-end gap-1">
-                  <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
-                  {plan.period && <span className="mb-1 text-sm text-slate-400">{plan.period}</span>}
-                  {'currency' in plan && <span className="mb-1 ml-1 text-xs font-bold text-slate-400">{(plan as any).currency}</span>}
-                </div>
-                <p className="mt-2 text-sm text-slate-500">{plan.description}</p>
-
-                <ul className="mt-6 space-y-3">
-                  {plan.features.map(feature => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
-                      <Check
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-600"
-                        aria-hidden="true"
-                      />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <a
-                href={plan.href}
-                className={`mt-8 block w-full rounded-xl py-3 text-center text-sm font-bold transition ${
-                  plan.highlighted
-                    ? 'bg-brand-600 text-white shadow-brand hover:bg-brand-700'
-                    : 'border border-brand-100 text-brand-600 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700'
+            return (
+              <div
+                key={plan.id}
+                className={`card relative flex flex-col ${
+                  highlighted
+                    ? 'border-brand-600 shadow-brand ring-2 ring-brand-600'
+                    : ''
                 }`}
               >
-                {plan.cta}
-              </a>
-            </div>
-          ))}
+                {highlighted && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="rounded-full bg-accent-500 px-4 py-1 text-xs font-bold text-white shadow-accent">
+                      Más popular
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex-1">
+                  <p className="text-sm font-bold uppercase tracking-widest text-slate-400">{plan.nombre_publico}</p>
+                  <div className="mt-2 flex items-end gap-1">
+                    <span className="text-4xl font-extrabold text-slate-900">{formatPrice(plan.precio_mensual)}</span>
+                    {!isFree && <span className="mb-1 text-sm text-slate-400">/mes</span>}
+                  </div>
+                  <p className="mt-2 text-sm text-slate-500">{plan.descripcion}</p>
+
+                  <ul className="mt-6 space-y-3">
+                    {FEATURES[plan.code].map(feature => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check
+                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-600"
+                          aria-hidden="true"
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href={planHref(plan)}
+                  className={`mt-8 block w-full rounded-xl py-3 text-center text-sm font-bold transition ${
+                    highlighted
+                      ? 'bg-brand-600 text-white shadow-brand hover:bg-brand-700'
+                      : 'border border-brand-100 text-brand-600 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700'
+                  }`}
+                >
+                  {CTA_LABEL[plan.code]}
+                </a>
+              </div>
+            );
+          })}
         </div>
+
+        <div className="card mx-auto mt-6 flex max-w-3xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-widest text-slate-400">¿Necesitás algo más?</p>
+            <p className="mt-1 text-sm text-slate-500">Armamos un plan a medida para tu negocio.</p>
+          </div>
+          <a
+            href={whatsappUrl('Hola, quiero información sobre un servicio personalizado')}
+            className="secondary-button whitespace-nowrap px-6 py-3 text-sm"
+          >
+            Hablemos
+          </a>
+        </div>
+
         <p className="mt-8 text-center text-xs text-slate-400">
           Precios en pesos argentinos (ARS). IVA no incluido.
         </p>
