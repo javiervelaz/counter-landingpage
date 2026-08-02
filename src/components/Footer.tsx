@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import logoVioleta from '@/assets/Logos/COUNTER CRM/COUNTER CRM Logo horizontal violeta.png';
+import { CONTACTO } from '@/data/content';
+import { Link } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -46,12 +48,7 @@ export function Footer() {
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Contacto</p>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <a
-                  href="mailto:hola@counter.com"
-                  className="text-slate-500 transition hover:text-brand-600"
-                >
-                  info@countercrm.com
-                </a>
+                <a href={`mailto:${CONTACTO.email}`}>{CONTACTO.email}</a>
               </li>
               <li>
                 <a
@@ -70,8 +67,8 @@ export function Footer() {
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-brand-100 pt-8 text-xs text-slate-400 sm:flex-row">
           <p>© {new Date().getFullYear()} Counter CRM. Todos los derechos reservados.</p>
           <div className="flex gap-4">
-            <a href="#" className="transition hover:text-brand-600">Privacidad</a>
-            <a href="#" className="transition hover:text-brand-600">Términos</a>
+            <Link href="/privacidad">Privacidad</Link>
+            <Link href="/terminos">Términos</Link>
           </div>
         </div>
       </div>

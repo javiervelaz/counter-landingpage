@@ -1,3 +1,4 @@
+import { signupUrl } from '@/data/content';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export function   HeroSection() {
@@ -23,10 +24,10 @@ acompaña de igual a igual.</span>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a href="#diagnostico" className="cta-button px-8 py-3.5 text-base">
-            Empezar gratis
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+          <a href={signupUrl('FREE', 'hero')} className="cta-button px-8 py-3.5 text-base">
+            Crear mi cuenta gratis
           </a>
+
           <a href="#como-funciona" className="secondary-button px-8 py-3.5 text-base">
             Ver cómo funciona
           </a>
