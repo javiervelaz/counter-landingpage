@@ -40,9 +40,6 @@ function formatPrice(precioMensual: string) {
 }
 
 function planHref(plan: ApiPlan) {
-  /*if (plan.code === 'CUSTOM') {
-    return whatsappUrl(`Hola, quiero información sobre el plan ${plan.nombre_publico}`);
-  }*/
   return signupUrl(plan.code, 'pricing');
 }
 

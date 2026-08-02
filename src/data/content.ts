@@ -85,7 +85,7 @@ export const diagnosisSteps = [
 // src/data/content.ts — agregar
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.countercrm.com';
 
-export const signupUrl = (plan: 'FREE' | 'BASIC' | 'PREMIUM' = 'FREE', campaign?: string) => {
+export const signupUrl = (plan: 'FREE' | 'BASIC' | 'PREMIUM' | 'CUSTOM' = 'FREE', campaign?: string) => {
   const p = new URLSearchParams({ plan, utm_source: 'landing' });
   if (campaign) p.set('utm_campaign', campaign);
   return `${APP_URL}/saas?${p}`;

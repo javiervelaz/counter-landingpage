@@ -39,7 +39,7 @@ describe('PricingSection', () => {
     expect(screen.getByText('Custom')).toBeInTheDocument();
     expect(screen.getByText('Plan 1 año')).toBeInTheDocument();
     expect(screen.getByText('$500')).toBeInTheDocument();
-    expect(screen.getByText('Solicitar servicio personalizado')).toBeInTheDocument();
+    expect(screen.getByText('Elegir Custom')).toBeInTheDocument();
 
     expect(screen.getByText('¿Necesitás algo más?')).toBeInTheDocument();
     expect(screen.getByText('Hablemos')).toBeInTheDocument();
