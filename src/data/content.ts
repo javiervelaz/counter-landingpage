@@ -83,7 +83,7 @@ export const diagnosisSteps = [
 ];
 
 // src/data/content.ts — agregar
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://api.countercrm.com';
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.countercrm.com';
 
 export const signupUrl = (plan: 'FREE' | 'BASIC' | 'PREMIUM' | 'CUSTOM' = 'FREE', campaign?: string) => {
   const p = new URLSearchParams({ plan, utm_source: 'landing' });

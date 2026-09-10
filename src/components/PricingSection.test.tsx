@@ -46,4 +46,22 @@ describe('PricingSection', () => {
 
     expect(screen.getAllByRole('link')).toHaveLength(plans.length + 1);
   });
+
+  it('muestra un estado vacío si no se pudieron obtener los planes', async () => {
+    vi.mocked(getPlans).mockRejectedValue(new Error('No se pudieron obtener los planes (500)'));
+
+    render(await PricingSection());
+
+    expect(screen.getByText('No pudimos cargar los planes en este momento')).toBeInTheDocument();
+    expect(screen.getByText('Hablar por WhatsApp')).toBeInTheDocument();
+    expect(screen.queryByText('¿Necesitás algo más?')).not.toBeInTheDocument();
+  });
+
+  it('muestra un estado vacío si la API devuelve una lista de planes vacía', async () => {
+    vi.mocked(getPlans).mockResolvedValue([]);
+
+    render(await PricingSection());
+
+    expect(screen.getByText('No pudimos cargar los planes en este momento')).toBeInTheDocument();
+  });
 });

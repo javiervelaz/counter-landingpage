@@ -13,7 +13,7 @@ export type ApiPlan = {
 
 export type SellablePlan = ApiPlan & { code: Exclude<PlanCode, 'CUSTOM'> };
 
-const PLANS_API_URL = process.env.PLANS_API_URL ?? 'https://api.countercrm.com/api/tiers';
+const PLANS_API_URL = process.env.PLANS_API_URL ?? 'https://app.countercrm.com/api/tiers';
 
 export function isSellablePlan(plan: ApiPlan): plan is SellablePlan {
   return !plan.es_personalizado;
