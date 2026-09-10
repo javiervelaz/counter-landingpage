@@ -4,7 +4,7 @@ import { ProblemSection } from '@/components/ProblemSection';
 import { SolutionSection } from '@/components/SolutionSection';
 import { DiagnosisSection } from '@/components/DiagnosisSection';
 import { FounderSection } from '@/components/FounderSection';
-import { TestimonialsSection } from '@/components/TestimonialsSection';
+// import { TestimonialsSection } from '@/components/TestimonialsSection'; // oculto temporalmente
 import { PricingSection } from '@/components/PricingSection';
 import { FAQSection } from '@/components/FAQSection';
 import { CTASection } from '@/components/CTASection';
@@ -20,7 +20,7 @@ export default function Home() {
         <SolutionSection />
         <DiagnosisSection />
         <FounderSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}  {/* oculto temporalmente */}
         <PricingSection />
         <FAQSection />
         <CTASection />
