@@ -1,5 +1,7 @@
 import { signupUrl } from '@/data/content';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import appPedidos from '@/assets/screenshots/app-pedidos.webp';
 
 export function   HeroSection() {
   return (
@@ -41,61 +43,18 @@ acompaña de igual a igual.</span>
             <span className="h-3 w-3 rounded-full bg-yellow-400" />
             <span className="h-3 w-3 rounded-full bg-green-400" />
             <span className="ml-4 flex-1 rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-400">
-              app.counter.com
+              app.countercrm.com
             </span>
           </div>
 
-          {/* App UI simulation */}
-          <div className="grid min-h-72 grid-cols-4 gap-0 sm:min-h-80">
-            {/* Sidebar */}
-            <div className="col-span-1 border-r border-slate-200 bg-white p-4">
-              <div className="mb-4 h-6 w-20 rounded-md bg-brand-600" />
-              <div className="space-y-1">
-                {['Pedidos', 'Clientes', 'Stock', 'Historial'].map(item => (
-                  <div
-                    key={item}
-                    className="rounded-lg px-3 py-2 text-xs font-semibold text-slate-600 first:bg-brand-50 first:text-brand-600"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Main content */}
-            <div className="col-span-3 space-y-4 p-5">
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  { label: 'Pedidos hoy', value: '24', color: 'bg-brand-50 text-brand-600' },
-                  { label: 'Clientes activos', value: '138', color: 'bg-accent-300/20 text-amber-700' },
-                  { label: 'Stock OK', value: '98%', color: 'bg-emerald-50 text-emerald-700' }
-                ].map(stat => (
-                  <div key={stat.label} className={`rounded-xl p-3 ${stat.color}`}>
-                    <p className="text-lg font-extrabold">{stat.value}</p>
-                    <p className="text-xs opacity-70">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* List rows */}
-              <div className="rounded-xl border border-slate-100 bg-white p-4 shadow-card">
-                <div className="mb-3 h-2.5 w-28 rounded-full bg-slate-200" />
-                <div className="space-y-3">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="h-8 w-8 flex-shrink-0 rounded-full bg-brand-100" />
-                      <div className="flex-1 space-y-1.5">
-                        <div className="h-2 w-32 rounded-full bg-slate-200" />
-                        <div className="h-2 w-20 rounded-full bg-slate-100" />
-                      </div>
-                      <div className="h-6 w-16 rounded-full bg-accent-500/20" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Captura real de la app */}
+          <Image
+            src={appPedidos}
+            alt="Panel de pedidos de Counter CRM"
+            className="h-auto w-full"
+            placeholder="blur"
+            priority
+          />
         </div>
 
         {/* Social proof */}
