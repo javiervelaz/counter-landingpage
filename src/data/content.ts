@@ -96,5 +96,13 @@ export const CONTACTO = {
   whatsapp: '5493513344326',   // reemplazar por el número comercial real
 } as const;
 
+// Titular del servicio. Tiene que coincidir EXACTO con la constancia de ARCA
+// y con el nombre legal del portfolio de Meta (verificación del negocio).
+export const TITULAR = {
+  nombre: 'Carlos Javier Velazquez',
+  cuit: '20-27415187-1',
+  emailPrivacidad: 'privacidad@countercrm.com',
+} as const;
+
 export const whatsappUrl = (msg = 'Hola, quiero saber más sobre Counter') =>
   `https://wa.me/${CONTACTO.whatsapp}?text=${encodeURIComponent(msg)}`;

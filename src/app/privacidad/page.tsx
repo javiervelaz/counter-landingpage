@@ -1,5 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import Link from 'next/link';
+import { TITULAR } from '@/data/content';
 
 export const metadata = {
   title: 'Política de Privacidad — Counter CRM',
@@ -22,7 +24,7 @@ export default function PrivacidadPage() {
           <div className="space-y-6 text-sm leading-relaxed text-slate-600">
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">1. Responsable</h2>
-              <p>Counter CRM (“nosotros”), con domicilio en Córdoba, Argentina, es responsable del tratamiento de los datos personales que se recopilan a través de countercrm.com y de la plataforma Counter CRM.</p>
+              <p>Counter CRM (“nosotros”) es un servicio de {TITULAR.nombre}, CUIT {TITULAR.cuit}, con domicilio en Córdoba, Argentina, responsable del tratamiento de los datos personales que se recopilan a través de countercrm.com y de la plataforma Counter CRM, incluido el canal de pedidos por WhatsApp.</p>
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">2. Datos que recopilamos</h2>
@@ -46,11 +48,11 @@ export default function PrivacidadPage() {
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">7. Derechos del titular</h2>
-              <p>Conforme a la Ley 25.326 de Protección de Datos Personales (Argentina), podés acceder, rectificar, actualizar y suprimir tus datos escribiendo a privacidad@countercrm.com. La Agencia de Acceso a la Información Pública es el órgano de control.</p>
+              <p>Conforme a la Ley 25.326 de Protección de Datos Personales (Argentina), podés acceder, rectificar, actualizar y suprimir tus datos escribiendo a {TITULAR.emailPrivacidad}. El paso a paso para pedir la eliminación está en <Link href="/eliminacion-datos" className="text-brand-600 underline">Eliminación de datos</Link>. La Agencia de Acceso a la Información Pública es el órgano de control.</p>
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">8. Contacto</h2>
-              <p>Ante cualquier consulta sobre privacidad: privacidad@countercrm.com</p>
+              <p>Ante cualquier consulta sobre privacidad: {TITULAR.emailPrivacidad}</p>
             </section>
           </div>
         </div>

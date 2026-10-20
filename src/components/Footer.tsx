@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import logoVioleta from '@/assets/Logos/COUNTER CRM/COUNTER CRM Logo horizontal violeta.png';
-import { CONTACTO } from '@/data/content';
+import { CONTACTO, TITULAR } from '@/data/content';
 import Link from 'next/link';
 
 export function Footer() {
@@ -65,10 +65,16 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-brand-100 pt-8 text-xs text-slate-400 sm:flex-row">
-          <p>© {new Date().getFullYear()} Counter CRM. Todos los derechos reservados.</p>
+          <div className="text-center sm:text-left">
+            <p>© {new Date().getFullYear()} Counter CRM. Todos los derechos reservados.</p>
+            <p className="mt-1">
+              Counter CRM es un servicio de {TITULAR.nombre} · CUIT {TITULAR.cuit} · Córdoba, Argentina
+            </p>
+          </div>
           <div className="flex gap-4">
             <Link href="/privacidad" className="transition hover:text-brand-600">Privacidad</Link>
             <Link href="/terminos" className="transition hover:text-brand-600">Términos</Link>
+            <Link href="/eliminacion-datos" className="transition hover:text-brand-600">Eliminación de datos</Link>
           </div>
         </div>
       </div>

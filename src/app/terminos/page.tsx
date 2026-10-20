@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { TITULAR } from '@/data/content';
 
 export const metadata = {
   title: 'Términos y Condiciones — Counter CRM',
@@ -26,7 +27,7 @@ export default function TerminosPage() {
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">2. El servicio</h2>
-              <p>Counter CRM es una plataforma SaaS para la gestión de comercios (productos, pedidos, caja, reportes). El servicio se ofrece “tal cual”, con planes de distinto alcance según la suscripción contratada.</p>
+              <p>Counter CRM es una plataforma SaaS para la gestión de comercios (productos, pedidos, caja, reportes). El servicio lo presta {TITULAR.nombre}, CUIT {TITULAR.cuit}, y se ofrece “tal cual”, con planes de distinto alcance según la suscripción contratada.</p>
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">3. Cuenta y uso</h2>
