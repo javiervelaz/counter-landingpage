@@ -43,6 +43,7 @@ export default function PrivacidadPage() {
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">6. Terceros</h2>
               <p>Utilizamos proveedores de infraestructura y pagos (por ejemplo, servicios de base de datos, hosting y procesadores de pago) que tratan datos por cuenta nuestra bajo acuerdos de confidencialidad.</p>
+              <p>En countercrm.com y en el registro usamos el Píxel de Meta y la API de Conversiones para medir el resultado de nuestras campañas publicitarias en Facebook e Instagram. Esto comparte con Meta datos de navegación y de registro (por ejemplo, eventos de la página, cookies, dirección IP, navegador y, de forma cifrada, el email). Podés administrar las preferencias de anuncios desde tu cuenta de Meta.</p>
             </section>
             <section>
               <h2 className="mb-2 text-lg font-semibold text-brand-700">7. Derechos del titular</h2>
