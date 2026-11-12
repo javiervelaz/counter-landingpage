@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import Tracking from '@/components/Tracking';
 
 const montserrat = localFont({
   src: [
@@ -34,7 +35,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${montserrat.variable} ${outfit.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Tracking />
+      </body>
     </html>
   );
 }
