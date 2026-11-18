@@ -8,15 +8,12 @@ export function CTASection() {
         <h2 className="font-display mx-auto max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
           Dejá atrás el caos del cuaderno y Excel.
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-lg text-brand-200">
-          Más de 500 negocios ya organizaron su operación con Counter. Tu turno.
-        </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={signupUrl('FREE', 'cta-final')} 
             className="inline-flex items-center justify-center rounded-xl bg-accent-500 px-8 py-3.5 text-base font-bold text-white shadow-accent transition hover:bg-accent-400"
           >
-            Empezar gratis
+            Creá tu cuenta gratis
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </a>
           <a

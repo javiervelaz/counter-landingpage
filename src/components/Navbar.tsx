@@ -31,7 +31,7 @@ export function Navbar() {
           </a>
         </nav>
 
-       <a href={signupUrl('FREE', 'navbar')} className="...">Empezar gratis</a>
+       <a href={signupUrl('FREE', 'navbar')} className="...">Creá tu cuenta gratis</a>
       </div>
     </header>
   );

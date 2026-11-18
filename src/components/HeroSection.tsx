@@ -27,7 +27,7 @@ acompaña de igual a igual.</span>
         {/* CTAs */}
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href={signupUrl('FREE', 'hero')} className="cta-button px-8 py-3.5 text-base">
-            Crear mi cuenta gratis
+            Creá tu cuenta gratis
           </a>
 
           <a href="#como-funciona" className="secondary-button px-8 py-3.5 text-base">

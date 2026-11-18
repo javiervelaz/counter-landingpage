@@ -6,7 +6,7 @@ import { signupUrl } from '@/data/content';
 import { beneficiosDe } from '@/data/beneficios';
 import { esContratable, esFree, precio, type ApiPlan, type RubroCatalogo } from '@/data/plans';
 
-const ctaLabel = (plan: ApiPlan) => (esFree(plan) ? 'Empezar gratis' : `Elegir ${plan.nombre_publico}`);
+const ctaLabel = (plan: ApiPlan) => (esFree(plan) ? 'Creá tu cuenta gratis' : `Elegir ${plan.nombre_publico}`);
 
 const HIGHLIGHTED_CODE: ApiPlan['code'] = 'PREMIUM';
 
