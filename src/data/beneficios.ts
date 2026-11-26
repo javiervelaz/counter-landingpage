@@ -62,7 +62,7 @@ const ORDEN: (keyof PlanFeatures)[] = [
   'canUseInventario',
   'canUseRecetas',
   'canUseReports',
-  'canUseWhatsappBot',
+  //'canUseWhatsappBot',
   'canUseBot',
 ];
 
